@@ -7,45 +7,52 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BidBuy') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
+    <div >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <a class="navbar-brand" href="#" style="color: #014675">
+                    <img src="/storage/logos/logo_bid_buy.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" >
+                    {{ config('app.name', 'BidBuy') }}
+                  </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
+                    <form class="mx-auto" style="width: 500px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" style="border-color: #f79420;">
+                            <button class="input-group-text" id="basic-addon1" style="border-color: #f79420"><i class="bi bi-search" style="color:#85c440"></i></button>
+                        </div>
+                    </form>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <li class="nav-item d-flex flex-row">
+                                    
+                                    <a class="nav-link" href="{{ route('login') }}" style="color: #f79420; font-size:16px"><i class="bi bi-box-arrow-in-right me-1"></i>{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item d-flex flex-row">
+                                    <a class="nav-link" href="{{ route('register') }}" style="color: #f79420; font-size:16px"><i class="bi bi-person-circle me-1 bi-2x"></i>{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
