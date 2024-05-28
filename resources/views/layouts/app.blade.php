@@ -21,8 +21,8 @@
     <div >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="#" style="color: #014675">
-                    <img src="/storage/logos/logo_bid_buy.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" >
+                <a class="navbar-brand" href="#" style="color: #014675; font-size:26px;">
+                    <img src="/storage/logos/logo_bid_buy.png" alt="Logo" width="130px"  class="d-inline-block align-text-top" style="margin-top:-10px">
                     {{ config('app.name', 'BidBuy') }}
                   </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
