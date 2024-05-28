@@ -5,14 +5,12 @@
     <div class="row">
         <div class="col-md-2" style="border: 1px solid black;">
             <div class="overflow-auto">
-                
                <ul>
                     <li><a href="##">Link 1</a></li>
                     <li><a href="##">Link 1</a></li>
                     <li><a href="##">Link 1</a></li>
                     <li><a href="##">Link 1</a></li>
                </ul>
-                
             </div>
         </div>
         <div class="col-md-10">
@@ -92,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    </div>
             <div class="row">
                 <div class="col-md-12">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
