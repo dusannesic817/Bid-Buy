@@ -31,7 +31,7 @@
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <form class="mx-auto" style="width: 500px;">
+                    <form class="mx-auto" style="width: 800px;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" style="border-color: #f79420;">
                             <button class="input-group-text" id="basic-addon1" style="border-color: #f79420"><i class="bi bi-search" style="color:#85c440"></i></button>
@@ -46,13 +46,13 @@
                             @if (Route::has('login'))
                                 <li class="nav-item d-flex flex-row">
                                     
-                                    <a class="nav-link" href="{{ route('login') }}" style="color: #f79420; font-size:16px"><i class="bi bi-box-arrow-in-right me-1"></i>{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}" style="color: #f79420; font-size:18px"><i class="bi bi-box-arrow-in-right me-1"></i>{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item d-flex flex-row">
-                                    <a class="nav-link" href="{{ route('register') }}" style="color: #f79420; font-size:16px"><i class="bi bi-person-circle me-1 bi-2x"></i>{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" style="color: #f79420; font-size:18px"><i class="bi bi-person-circle me-1 bi-2x"></i>{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
