@@ -11,6 +11,8 @@ class Auction extends Model
 {
     use HasFactory;
 
+    protected $fillable=['user_id','category_id','subcategory_id','condition_id',
+    'name','short_description','description','started_price','expiry_time'];
 
     public function user():BelongsTo{
         return $this->belongsTo(User::class);
@@ -26,5 +28,9 @@ class Auction extends Model
 
     public function views():HasMany{
         return $this->hasMany(View::class);
+    }
+
+    public function conditions():HasMany{
+        return $this->hasMany(Condition::class);
     }
 }

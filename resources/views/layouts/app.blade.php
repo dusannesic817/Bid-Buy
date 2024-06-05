@@ -12,6 +12,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/script.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     
 
     <!-- Scripts -->
@@ -56,6 +61,9 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item d-flex flex-row">
+                                <a class="nav-link" href="{{route('auction.create')}}" style="color: #f79420; font-size:18px"><i class="bi bi-plus-circle"></i></a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
