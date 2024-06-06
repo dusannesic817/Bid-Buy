@@ -22,7 +22,11 @@
                 @foreach ($auctions as $auction)
                     <div class="col-md-3 mt-3 mb-3">
                         <div class="card h-100" style="width: 12rem;">
+<<<<<<< HEAD
                             <a href="{{route('auction.show',[$auction->id])}}"><img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> </a>
+=======
+                            <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> 
+>>>>>>> 9889b181ed47ef43c4ebf45de972bb0d396538b1
                             <div class="card-body">
                                 <div class="card-text" style="font-size: 14px">{{$auction->name}}</div> 
                                 <div class="card-text" style="font-size: 12px;">Offer</div>
@@ -79,7 +83,11 @@
                                         @foreach ($auctions as $auction)
                                         <div class="col-2">
                                             <div class="card h-100" style="width: 12rem;"> 
+<<<<<<< HEAD
                                                 <a href="{{route('auction.show',[$auction->id])}}"><img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> </a>
+=======
+                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> 
+>>>>>>> 9889b181ed47ef43c4ebf45de972bb0d396538b1
                                                 <div class="card-body">
                                                     <div class="card-text" style="font-size: 14px">{{$auction->name}}</div> 
                                                     <div class="card-text" style="font-size: 12px;">Offer</div> 
