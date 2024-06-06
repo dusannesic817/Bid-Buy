@@ -126,11 +126,11 @@
             @foreach ($items as $item)
             <div class="row item" style="height: 230px;">
                 <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="##"><img class="ms-2 mt-2 img-fluid" src="{{ Storage::url('public/auction_images/' . $item->images->first()->img_path) }}" width="260px"></a>
+                    <a href="{{route('auction.show',[$item->id])}}"><img class="ms-2 mt-2 img-fluid" src="{{ Storage::url('public/auction_images/' . $item->images->first()->img_path) }}" width="260px"></a>
                 </div>
                 <div class="col-6 mt-4">
                     <div class="ms-1">
-                        <h5><a href="#" style="text-decoration: none; color: #014675;">{{$item->name}}</a></h5>
+                        <h5><a href="{{route('auction.show',[$item->id])}}" style="text-decoration: none; color: #014675;">{{$item->name}}</a></h5>
                         <div class="d-flex flex-row mb-3 mt-5">
                             <div class="me-3">Aukcijska Cena:</div>
                             <div>{{$item->started_price}} RSD</div>

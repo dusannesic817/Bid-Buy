@@ -83,7 +83,17 @@ class AuctionController extends Controller
      */
     public function show(Auction $auction)
     {
-        
+
+        $count=Auction::where('user_id', $auction->user->id)->count();
+
+    
+
+
+        return view('auction.show',[
+            'auction'=>$auction,
+            'count'=>$count
+        ]
+    );
     }
 
     /**
