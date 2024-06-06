@@ -8,7 +8,7 @@ ul,li a{
 }  
 
 ul li a:hover {
-    text-decoration: underline; /* Podvlači link prilikom hover-a */
+    text-decoration: underline;
   }
 
 a{
@@ -21,6 +21,43 @@ a:hover{
 }
 
 .carousel-blog img {
-    height: 500px; /* Promenite vrednost na željenu visinu */
-    object-fit: cover; /* Da bi slike zadržale svoj odnos širine i visine */
+    height: 500px;
+    object-fit: cover; 
 }
+
+
+.item:hover{
+
+    background-color: bisque;
+}
+
+.accordion-button:hover {
+    background-color: transparent;
+  }
+
+  /* Uklanjanje bordera */
+  .accordion-item {
+    border: none;
+  }
+
+  .img-fluid:hover {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.main-image {
+    width: 95%;
+    height: auto;
+    max-height: 500px; 
+}
+
+.accordion-header .accordion-button {
+    background-color: transparent !important;
+    color: initial !important;
+    box-shadow: none !important;
+}
+
+.accordion-body {
+    background-color: transparent !important;
+}
+

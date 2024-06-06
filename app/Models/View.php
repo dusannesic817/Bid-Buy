@@ -12,6 +12,6 @@ class View extends Model
 
 
     public function auctions():BelongsTo{
-        return $this->belongsTo(Auction::class);
+        return $this->belongsTo(Auction::class,'auction_id');
     }
 }

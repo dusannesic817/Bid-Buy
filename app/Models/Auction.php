@@ -18,11 +18,11 @@ class Auction extends Model
     'name','short_description','description','started_price','expiry_time'];
 
     public function user():BelongsTo{
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function category():BelongsTo{
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function images():HasMany{
@@ -33,8 +33,8 @@ class Auction extends Model
         return $this->hasMany(View::class);
     }
 
-    public function conditions():HasMany{
-        return $this->hasMany(Condition::class);
+    public function conditions():BelongsTo{
+        return $this->BelongsTo(Condition::class, 'condition_id');
     }
 
    /* protected function imgSrc(): Attribute{

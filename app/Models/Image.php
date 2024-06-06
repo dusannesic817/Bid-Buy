@@ -13,6 +13,6 @@ class Image extends Model
     protected $fillable=['auction_id','img_path'];
 
     public function auction():BelongsTo{
-        return $this->belongsTo(Auction::class);
+        return $this->belongsTo(Auction::class,'auction_id');
     }
 }

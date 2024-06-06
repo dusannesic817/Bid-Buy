@@ -7,7 +7,7 @@
             <div class="overflow-auto">
                <ul class="mt-5">
                 @foreach ($categories as $category)
-                <li><a href="##">{{$category->name}}</a></li>
+                <li><a href="{{route('category.show',[$category->id])}}">{{$category->name}}</a></li>
                 @endforeach
                     
                     
@@ -140,8 +140,8 @@
                                 <div class="container">
                                     <div class="row">
                                         <!-- Prvi slajd karusela -->
+                                        @foreach ($auctions as $auction)
                                         <div class="col-2">
-                                            @foreach ($auctions as $auction)
                                             <div class="card" style="width: 12rem;">
                                                 <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
                                                 <div class="card-body">
@@ -149,64 +149,11 @@
                                                     <div class="card-text">Offer</div>
                                                 </div>
                                             </div>
-                                            @endforeach
+                                            
                                         </div>
+                                        @endforeach
                                         <!-- Dodatne kartice -->
-                                        <div class="col-2">
-                                            @foreach ($auctions as $auction)
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="col-2">
-                                            @foreach ($auctions as $auction)
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="col-2">
-                                            @foreach ($auctions as $auction)
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="col-2">
-                                            @foreach ($auctions as $auction)
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="col-2">
-                                            @foreach ($auctions as $auction)
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
+        
                                     </div>
                                 </div>
                             </div>

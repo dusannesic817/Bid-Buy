@@ -18,3 +18,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// script.js
+
+function limitCheckbox(group, clickedCheckbox) {
+    var checkboxes = document.querySelectorAll('.' + group + ' .form-check-input');
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox !== clickedCheckbox) {
+            checkbox.checked = false;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+function switchImages() {
+    var smallImages = document.querySelectorAll('[id^="smallImage"]');
+    var mainImage = document.getElementById('mainImage');
+    var mainImageSrc = mainImage.src;
+
+    smallImages.forEach(function (smallImage) {
+        smallImage.addEventListener('click', function () {
+            var clickedImageSrc = this.src;
+            mainImage.src = clickedImageSrc;
+            this.src = mainImageSrc;
+            mainImageSrc = mainImage.src;
+            mainImage.src = mainImageSrc;
+        });
+    });
+}
+
+switchImages();
+});
+
+
+
+
