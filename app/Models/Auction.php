@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Auction extends Model
 {
@@ -33,4 +36,24 @@ class Auction extends Model
     public function conditions():HasMany{
         return $this->hasMany(Condition::class);
     }
+
+   /* protected function imgSrc(): Attribute{
+        return Attribute::make(
+        get: fn () =>  ($this->image && Storage::disk('public')->exists($this->image))? 
+           Storage::url($this->image): '/storage/auction_images/default-movie.jpg'
+        );
+
+     }*/
+     protected function imageSrc(): Attribute {
+        return Attribute::make(fn() => 
+            $this->images->isNotEmpty() && 
+            Storage::disk('public')->exists('auction_images/' . $this->images->first()->img_path) ? 
+            Storage::url('public/auction_images/' . $this->images->first()->img_path) : 
+            Storage::url('public/auction_images/no_image.png')
+        );
+    }
+    
+
+
+ 
 }

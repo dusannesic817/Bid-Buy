@@ -1,0 +1,26 @@
+ul{
+    list-style: none;
+}
+
+ul,li a{
+    text-decoration: none;
+    color: #014675;
+}  
+
+ul li a:hover {
+    text-decoration: underline; /* Podvlači link prilikom hover-a */
+  }
+
+a{
+    text-decoration: none;
+    color: #014675;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.carousel-blog img {
+    height: 500px; /* Promenite vrednost na željenu visinu */
+    object-fit: cover; /* Da bi slike zadržale svoj odnos širine i visine */
+}
