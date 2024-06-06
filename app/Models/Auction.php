@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -37,13 +38,7 @@ class Auction extends Model
         return $this->BelongsTo(Condition::class, 'condition_id');
     }
 
-   /* protected function imgSrc(): Attribute{
-        return Attribute::make(
-        get: fn () =>  ($this->image && Storage::disk('public')->exists($this->image))? 
-           Storage::url($this->image): '/storage/auction_images/default-movie.jpg'
-        );
 
-     }*/
      protected function imageSrc(): Attribute {
         return Attribute::make(fn() => 
             $this->images->isNotEmpty() && 
@@ -51,6 +46,32 @@ class Auction extends Model
             Storage::url('public/auction_images/' . $this->images->first()->img_path) : 
             Storage::url('public/auction_images/no_image.png')
         );
+    }
+
+
+    public function calculateLeftTimeForOffer(){
+
+
+
+        $currentDateTime = Carbon::now('Europe/Belgrade');
+        $currentDateTimeFormatted = $currentDateTime->format('Y-m-d H:i:s');
+        $expiry_time = Carbon::parse($this->expiry_time);
+
+        $differenceInHours = $expiry_time->floatDiffInHours($currentDateTimeFormatted);
+
+        $round= ceil(abs($differenceInHours));
+
+        if($round>=24){
+            $dani=$round/24;
+            return ceil($dani) ." Days";
+       }elseif($round<1){
+          $sati= round(abs($round)*60);
+           return $sati. " Minutes";
+       }else{
+          return $round. " Hours";
+       }
+
+       
     }
     
 

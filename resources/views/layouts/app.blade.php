@@ -26,7 +26,7 @@
     <div >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="#" style="color: #014675; font-size:26px;">
+                <a class="navbar-brand" href="{{route('welcome.index')}}" style="color: #014675; font-size:26px;">
                     <img src="/storage/logos/logo_bid_buy.png" alt="Logo" width="130px"  class="d-inline-block align-text-top" style="margin-top:-10px">
                     {{ config('app.name', 'BidBuy') }}
                   </a>

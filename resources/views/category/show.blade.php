@@ -114,7 +114,7 @@
             <div class="row">
                 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('welcome.index')}}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
                     </ol>
                 </nav>
@@ -144,9 +144,9 @@
                 
                 <div class="col-2">
                     <div class="mt-5">
-                        <div><i class="bi bi-people-fill" style="font-size: 24px; color: rgb(132, 169, 202);"></i> 36 ponuda</div>
+                        <div><i class="bi bi-bar-chart" style="font-size: 24px; color: rgb(132, 169, 202);"></i> 36 ponuda</div>
                         <div class="border-bottom mt-2 mb-2"></div>
-                        <div><i class="bi bi-clock-fill" style="font-size: 24px; color: rgb(132, 169, 202);"></i> 3 dana</div>
+                        <div><i class="bi bi-hourglass-split" style="font-size: 24px; color: rgb(132, 169, 202);"></i>{{$item->difference}}</div>
                     </div>
                 </div>
              

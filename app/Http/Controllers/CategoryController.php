@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Auction;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -39,12 +40,12 @@ class CategoryController extends Controller
     {
 
         $items = Auction::where('category_id', $category->id)->get();
+
+        foreach ($items as $item) {
+            $round=$item->calculateLeftTimeForOffer();
+            $item->difference = $round;
+        }
         
-      
- 
-
-      
-
         return view ('category.show', [
             'category'=>$category,
             'items'=>$items
