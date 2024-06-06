@@ -20,81 +20,18 @@
                     <h5 class="pt-1 ps-2">Top Offers</h5>
                     <div class="border-bottom"></div>
                 </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    @foreach ($auctions as $auction)
-                    <div class="card" style="width: 12rem;">
-                        <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                            <div class="card-text">Offer</div>
+                @foreach ($auctions as $auction)
+                    <div class="col-md-3 mt-3 mb-3">
+                        <div class="card h-100" style="width: 12rem;">
+                            <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> 
+                            <div class="card-body">
+                                <div class="card-text" style="font-size: 14px">{{$auction->name}}</div> 
+                                <div class="card-text" style="font-size: 12px;">Offer</div>
+                            </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mb-3">
-                    <div class="card" style="width: 12rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <div class="card-text">Price</div>
-                            <div class="card-text">Offer</div>
-                        </div>
-                    </div>
-                </div>
-    </div>
+                @endforeach  
+        </div>
             <div class="row mt-4">
                 <div class="col-md-12">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -142,11 +79,11 @@
                                         <!-- Prvi slajd karusela -->
                                         @foreach ($auctions as $auction)
                                         <div class="col-2">
-                                            <div class="card" style="width: 12rem;">
-                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="...">
+                                            <div class="card h-100" style="width: 12rem;"> 
+                                                <img src="{{ Storage::url('public/auction_images/' . $auction->images->first()->img_path) }}" class="card-img-top" alt="..." style="object-fit: cover; height: 8rem;"> 
                                                 <div class="card-body">
-                                                    <div class="card-text" style="font-size: 16px">{{$auction->name}}</div>
-                                                    <div class="card-text">Offer</div>
+                                                    <div class="card-text" style="font-size: 14px">{{$auction->name}}</div> 
+                                                    <div class="card-text" style="font-size: 12px;">Offer</div> 
                                                 </div>
                                             </div>
                                             
