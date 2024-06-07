@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
+use App\Models\Auction;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -28,7 +29,34 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data=$request->validate([
+            'price'=>'required|numeric|min:0.5',
+            'auction_id'=>'required'
+        ]);
+
+        $data['user_id']=auth()->id();
+        $auctionId = $request->input('auction_id');
+
+        $auction_user_id = Auction::where('id', $auctionId)->value('user_id');
+        
+        if($auction_user_id===$data['user_id']){
+
+            $request->session()->flash('alertType','danger');
+            $request->session()->flash('alertMsg','You cannot make the offer you are the owner!');
+            return redirect()->back();
+        }
+
+        $offer = new Offer();
+        $offer->fill($data);
+        $offer->auction_id = $auctionId; 
+        $offer->save();
+
+        $request->session()->flash('alertType','success');
+        $request->session()->flash('alertMsg','Congratulations, you have successfully bid!');
+
+        return redirect()->back();
+
     }
 
     /**
@@ -36,7 +64,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        //
+        
     }
 
     /**

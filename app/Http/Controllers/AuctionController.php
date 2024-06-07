@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Image;
+use App\Models\Offer;
 use App\Models\Auction;
 use App\Models\Category;
 use App\Models\Condition;
 use App\Models\Subcategory;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AuctionController extends Controller
@@ -85,13 +86,24 @@ class AuctionController extends Controller
     {
 
         $count=Auction::where('user_id', $auction->user->id)->count();
+        $startedPrice=Auction::where('id', $auction->id)->value('started_price');
+       
 
-    
+        $sum_offers=Offer::where('auction_id', $auction->id)->pluck('price')->sum();
+        $countOffers=Offer::where('auction_id', $auction->id)->count();
 
+        $currentOffer=$sum_offers+$startedPrice;
+
+        $nextOffer=$currentOffer + 0.5;
+
+      
 
         return view('auction.show',[
             'auction'=>$auction,
-            'count'=>$count
+            'count'=>$count,
+            'currentOffer'=>$currentOffer,
+            'nextOffer'=>$nextOffer,
+            'countOffers'=>$countOffers
         ]
     );
     }

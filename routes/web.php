@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Category;
+
+use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('auction', AuctionController::class);
+    Route::post('/offer', [OfferController::class, 'store'])->name('offer.store');
 });
 
 require __DIR__.'/auth.php';

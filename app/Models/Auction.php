@@ -30,6 +30,10 @@ class Auction extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function offers():HasMany{
+        return $this->hasMany(Offer::class);
+    }
+
     public function views():HasMany{
         return $this->hasMany(View::class);
     }
