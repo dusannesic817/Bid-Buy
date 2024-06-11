@@ -66,3 +66,22 @@ a:hover{
     height: 12.5rem; 
 }
 
+.custom-button {
+    background-color: transparent;
+    color: #ff9900; 
+    border:1px solid  #ff9900;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+    .custom-button:hover{
+      background-color: #fef5e4;
+
+    }
+    .sing-register-form input::placeholder {
+    color:#b3c268;
+}
+
+.sing-register-form input{
+  border-color: #f79420;
+}

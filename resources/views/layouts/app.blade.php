@@ -57,7 +57,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item d-flex flex-row">
-                                    <a class="nav-link" href="{{ route('register') }}" style="color: #f79420; font-size:18px"><i class="bi bi-person-circle me-1 bi-2x"></i>{{ __('Register') }}</a>
+                                    <a class="nav-link" href="javascript:void(0)" id="registerLink" data-bs-toggle="modal" data-bs-target="#regModal">Register</a>
                                 </li>
                             @endif
                         @else
@@ -86,10 +86,17 @@
                 </div>
             </div>
         </nav>
+        <div id="myModal">
 
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <script>
+        $(document).ready(function(){
+            $("#myModal").load("register #regModal");
+        });
+    </script>
 </body>
 </html>
