@@ -51,7 +51,7 @@
                             @if (Route::has('login'))
                                 <li class="nav-item d-flex flex-row">
                                     
-                                    <a class="nav-link" href="{{ route('login') }}" style="color: #f79420; font-size:18px"><i class="bi bi-box-arrow-in-right me-1"></i>{{ __('Login') }}</a>
+                                    <a class="nav-link" href="javascript:void(0)" id="loginLink" style="color: #f79420; font-size:18px"><i class="bi bi-box-arrow-in-right me-1" data-bs-toggle="modal" data-bs-target="#logModal"></i>{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -94,9 +94,20 @@
         </main>
     </div>
     <script>
-        $(document).ready(function(){
-            $("#myModal").load("register #regModal");
+       $(document).ready(function(){
+    $("#registerLink").click(function(){
+        $("#myModal").load("register #regModal", function(){
+            $('#regModal').modal('show');
         });
+    });
+
+    $("#loginLink").click(function(){
+        $("#myModal").load("login #logModal", function(){
+            $('#logModal').modal('show');
+        });
+    });
+});
+
     </script>
 </body>
 </html>

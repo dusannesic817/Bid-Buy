@@ -29,24 +29,23 @@
                                     </span>
                                 @enderror
                             </div>
-                        
-                        <div class="col-md-6">
-                            <input 
-                            id="surname" 
-                            type="text" 
-                            class="form-control form-control-sm @error('surname') is-invalid @enderror" 
-                            placeholder="Surname" 
-                            name="surname" 
-                            value="{{ old('surname') }}" 
-                            required autocomplete="surname" autofocus>
+                            <div class="col-md-6">
+                                <input 
+                                id="surname" 
+                                type="text" 
+                                class="form-control form-control-sm @error('surname') is-invalid @enderror" 
+                                placeholder="Surname" 
+                                name="surname" 
+                                value="{{ old('surname') }}" 
+                                required autocomplete="surname" autofocus>
 
-                            @error('surname')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
 
                         <div class="row mb-3">
 
