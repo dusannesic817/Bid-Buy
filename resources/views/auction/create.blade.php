@@ -174,69 +174,6 @@
     </div>
 </form>
 </div>
-<div class="container">
-    <div class="row">
-        <a class="nav-link" href="javascript:void(0)" id="registerLink" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-content">
-                            <div class="text-end me-2 mt-2">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 12px; padding: 5px;"></button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="text-center mb-5">
-                                <img src="img/logo_bid_buy.png" width="200px">
-                              </div>
-                                <form class="sing-register-form" action="login.php" method="post">
-                                  <div class="text-center">
-                                    <div class="mb-3 col-6">
-                                        <input class="form-control form-control-sm" type="text" placeholder="Name" id="name" name="name" required>
-                                    </div>
-                                    <div class="mb-3">
-                                      <input class="form-control form-control-sm" type="text" placeholder="Surname" id="sruname" name="surname" required>
-                                    </div>
-                                    <div class="mb-3">
-                                      <input class="form-control form-control-sm" type="text" name="username" placeholder="Username" aria-label=".form-control-sm example" required>
-                                    </div>
-                                    <div class="mb-3">
-                                     
-                                      <input class="form-control form-control-sm" type="email" name="email" id="email" placeholder="Email Address" aria-label=".form-control-sm example"  required>
-                                    </div>
-                                    <div class="mb-3">
-                                       
-                                        <input class="form-control form-control-sm" type="password" placeholder="Password" id="password" name="password"  required>
-                                    </div>
-                                    <div class="mb-3">
-                                     
-                                      <input class="form-control form-control-sm" type="text" placeholder="Address" id="address" name="address"  required>
-                                    </div>
-                                    <div class="mb-3">
-                                     
-                                      <input class="form-control form-control-sm" type="text" placeholder="Number" id="number" name="number" required>
-                                    </div>
-                                    <div class="mb-5 mt-5">
-                                      <button type="submit" class="custom-button w-100">Register</button>
-                                    </div>
-                                  </div>
-                                </form>
-                            </div>
-                          </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 

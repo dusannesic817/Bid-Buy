@@ -86,23 +86,23 @@
                 </div>
             </div>
         </nav>
-        <div id="myModal">
-
-        </div>
+        <div id="myModal"></div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
     <script>
-       $(document).ready(function(){
+$(document).ready(function(){
     $("#registerLink").click(function(){
-        $("#myModal").load("register #regModal", function(){
+        var registerUrl = "{{ route('register') }}";
+        $("#myModal").load(registerUrl + " #regModal", function(){
             $('#regModal').modal('show');
         });
     });
 
     $("#loginLink").click(function(){
-        $("#myModal").load("login #logModal", function(){
+        var loginUrl = "{{ route('login') }}";
+        $("#myModal").load(loginUrl + " #logModal", function(){
             $('#logModal').modal('show');
         });
     });
