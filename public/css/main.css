@@ -71,14 +71,14 @@ a:hover{
     color: #ff9900; 
     border:1px solid  #ff9900;
     border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     }
     .custom-button:hover{
       background-color: #fef5e4;
 
     }
-    .sing-register-form input::placeholder {
+.sing-register-form input::placeholder {
     color:#b3c268;
 }
 

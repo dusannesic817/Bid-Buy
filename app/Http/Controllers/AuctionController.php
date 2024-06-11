@@ -61,7 +61,10 @@ class AuctionController extends Controller
         $data['user_id']=auth()->id();
         //$data['expiry_time']=Carbon::createFromFormat('Y-m-d', $data['expiry_time'])->timestamp;
 
+
         $auction=Auction::create($data);
+
+
 
         if($request->has('images')){
             foreach($request->file('images') as $image){

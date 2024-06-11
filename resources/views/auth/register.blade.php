@@ -144,7 +144,7 @@
 
                         <div class="row mb-5 mt-5">
                             <div class="col-md-12">
-                            <button type="submit" class="custom-button w-100">Register</button>
+                            <button type="submit" class="custom-button w-100">{{("Register")}}</button>
                             </div>
                         </div>
                     </form>

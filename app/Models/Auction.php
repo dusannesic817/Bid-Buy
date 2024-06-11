@@ -77,7 +77,6 @@ class Auction extends Model
 
        
     }
-    
 
 
  

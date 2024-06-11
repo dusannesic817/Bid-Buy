@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/script.js') }}"></script>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -109,5 +109,6 @@ $(document).ready(function(){
 });
 
     </script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
