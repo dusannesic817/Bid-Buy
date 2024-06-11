@@ -1,18 +1,8 @@
-<div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="regModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-            <div class="text-end mt-2 me-2">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-                        <div class="text-center mb-5">
-                            <img src="/storage/logos/logo_bid_buy.png" width="200px">
-                        </div>
+@extends('layouts.app') 
+  <x-auth.form type="Join us as a member" id="regModal">
                     <form method="POST" class="sing-register-form" action="{{ route('register') }}">
                         @csrf
-
                         <div class="row mb-3">
-
                             <div class="col-md-6">
                                 <input 
                                 id="name" 
@@ -85,8 +75,6 @@
                         </div>
 
                         <div class="row mb-3">
-                           
-
                             <div class="col-md-12">
                                 <input 
                                 id="password" 
@@ -160,9 +148,5 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+                </x-auth.form>
 
